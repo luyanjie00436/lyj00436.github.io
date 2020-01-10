@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>2020年易通年会游戏互动平台</title>
+    <!--图片库-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="js/jquery-2.2.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class='luck-back'>
+        <div class="title">2020年易通年会游戏互动平台</div>
+        <div class="div_music ">
+            <span id="span_music" class="fa-stack fa-lg">
+                <i class="fa fa-stack-1x fa-music"></i>
+                <i class="fa fa-ban  fa-stack-2x  text-danger"></i>
+            </span>
+            <audio id="myaudio" src="music/1.mp3" controls="controls" loop="loop" hidden="hidden" autoplay>
+            </audio>
+        </div>
+        <div class="luck-content ce-pack-end">
+            <div id="luckuser" class="slotMachine" >                
+            </div>
+            <div class="luck-content-btn">
+                <i id="lot_minus" class="fa fa-minus"></i>
+                <input id="lotterynumber" type="range" min="1" max="10" step="1" value="1" />
+                <i id="lot_plus" class="fa fa-plus"></i>
+                &nbsp;&nbsp;
+                <label id="lot_value">1</label>
+                <a id="start" class="start" onclick="start()">开始</a>
+            </div>
+            <div class="luck-user">
+                <div class="luck-user-title">
+                    <span>参与游戏名单</span>
+                </div>
+                <ul class="luck-user-list"></ul>                
+            </div>
+        </div>
+    </div>
+    <script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/Luckdraw.js" type="text/javascript" charset="utf-8"></script>
+    <div style="text-align:center;">
+    </div>
+</body>
+</html>
