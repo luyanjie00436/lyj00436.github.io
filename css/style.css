@@ -1,0 +1,540 @@
+﻿
+*{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+html,body{padding: 0; margin: 0; font-family: 14px; font-family: "微软雅黑";}
+
+.ce-pack-end{display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack:center; position: absolute; top:0; left: 0;}
+/*背景层*/
+.luck-back{
+    background-image: url(../img/back.jpg);
+    background-size: cover; 
+    background-position: top center; 
+    position: absolute; 
+    height: 100%; 
+    width: 100%; 
+    color: #fff;
+}
+
+/* 大盒子*/
+.luck-content{
+    position: absolute; 
+    top: 5%; 
+    bottom:5%;
+    left:5%;
+    right:5%;
+    background: rgba(0,0,0,.6);
+    padding: 20px; 
+    border-radius: 5px;
+    padding-right:260px;
+
+}
+/*参与游戏者*/
+.luck-user{
+    position: absolute; 
+    right: 20px;
+    top: 20px; 
+    bottom: 20px; 
+    width: 240px; 
+    background-color: rgba(255,255,255,.2); border-radius: 5px;}
+/*参与游戏者显示*/
+.luck-user-list{
+    list-style-type: none; 
+    padding:0 20px; 
+    margin: 0; 
+    position: absolute; 
+    top: 50px; 
+    bottom: 0px; 
+    width: 100%;
+    overflow-y : auto;
+}
+.luck-user-list>li{
+    margin-top: 10px;
+    position: relative;}
+/*参与游戏者头像*/
+    .luck-user-list > li div.portrait {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        box-shadow: darkgrey 5px 5px 5px 2px;
+    }
+/*参与游戏者姓名*/
+.luckuserName {
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    left: 80px;
+    font-size : 20px;
+}
+.luck-user-title{position: absolute; width: 90%; display: block; text-align: center; line-height: 40px; left: 5%; color: #f5b43a; font-weight: bold;}
+.luck-user-title::before{position: absolute; content: ""; top: 100%; left: 0; width: 100%; background:-webkit-linear-gradient(left,rgba(248,215,59,0),#f0d03a,rgba(248,215,59,0)); height:1px;}
+
+.luck-user-btn{position: absolute; bottom: 20px; left: 5%; width: 90%; text-align: center; line-height: 40px; cursor: pointer;}
+.luck-user-btn>a{background: #f29807; width: 100%; line-height: 40px; display: block; border-radius: 5px; text-decoration: none; color: #fff;}
+.luck-user-btn>a:hover{background: #fcb842;}
+
+.luck-title{text-align: center; margin-bottom: 20px;}
+
+/*开始按钮*/
+.luck-content-btn {
+    position : absolute;
+    bottom : 10px;
+    width:80%;
+    text-align: center;
+    line-height: 40px;
+    padding-top: 20px;
+    padding-bottom : 20px;
+    overflow: hidden;   
+}
+.luck-content-btn a{
+    background: #f29807; 
+    width:150px; 
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    text-align: center; 
+    margin: 0 10px;
+    cursor: pointer;
+}
+.luck-content-btn a:hover{
+    background: #fcb842;
+}
+/*滚动条*/
+    .luck-content-btn input[type=range] {
+        -webkit-appearance: none;
+        border-radius: 10px;   
+        position:relative;
+        top : 3px;   /*滚动条和加减其他相对位置确定*/
+    }
+    /*加减符号*/
+    .luck-content-btn i {       
+    }  
+
+.luck-title {
+    font-size: 20px;
+}
+/*显示屏幕*/
+.slotMachine {
+    width: 100%;
+    height: 100%;
+    right: 10px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    border: #f5ad18 4px solid;
+    position: relative;
+    box-shadow: gray 5px 5px 5px 2px inset;
+    overflow: hidden;
+   
+}
+    .slotMachine .slot {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        overflow: hidden;
+        transform-style: preserve-3d;
+    }
+
+        .slotMachine .slot:hover {
+            width: 160px;
+            height: 160px;
+            box-shadow: rgba(0,0,0,0.4) 10px 10px;
+        }
+
+
+    /*设置盒子的列值*/
+        .slotMachine .slot:nth-of-type(7n + 1) {
+            left: 10px;
+            transform: rotateY(60deg);
+            -webkit-transform: rotateY(60deg); /* Safari and Chrome */
+            animation: column1 20s linear infinite;                                                                          ;
+        }
+
+ /*第一列日常滚动*/
+@keyframes column1 {
+    0% {
+        left: 10px;
+        opacity: 1;
+        transform: rotateY(60deg);
+    }
+    1% {
+        transform: rotateY(120deg);
+        opacity : 0.1;
+    }
+    25% {
+        left: 450px;
+        opacity: 0.1;
+        transform: rotateY(180deg);
+    }
+    49% {
+        opacity : 0.1;
+        transform: rotateY(240deg)
+    }
+    50% {
+        left: 900px;
+        opacity: 1;
+        transform: rotateY(-60deg);
+    }
+    75% {
+        left: 450px;
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+    100% {
+        left: 10px;
+        opacity: 1;
+        transform: rotateY(60deg);
+    }
+}
+
+
+.slotMachine .slot:nth-of-type(7n + 2) {
+    left: 130px;
+    transform: rotateY(40deg);
+    -webkit-transform: rotateY(40deg); /* Safari and Chrome */
+    animation: column2 20s linear infinite;
+}
+/*第二列滚动*/
+@keyframes column2{
+    0% {        
+        left: 130px;
+        transform: rotateY(40deg);
+        opacity: 1;        
+    }
+    8% {
+        left: 10px;
+        opacity: 1;
+        transform: rotateY(60deg);
+    }
+    9% {
+        opacity : 0.1;
+        transform: rotateY(120deg);
+    }
+    33% {
+        left: 450px;
+        opacity: 0.1;
+        transform: rotateY(180deg);
+    }
+    57% {
+        opacity : 0.1;
+        transform: rotateY(240deg)
+    }
+    58% {
+        left: 900px;
+        opacity: 1;
+        transform: rotateY(-60deg);
+    }
+    83% {
+        left: 450px;
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+    100% {
+        left: 130px;
+        transform: rotateY(40deg);
+        opacity: 1;        
+    }
+}
+.slotMachine .slot:nth-of-type(7n + 3) {
+    left: 280px;
+    transform: rotateY(20deg);
+    -webkit-transform: rotateY(20deg); /* Safari and Chrome */
+    animation: column3 20s linear infinite;
+}
+
+@keyframes column3 {
+    0% {
+        left: 280px;
+        transform: rotateY(20deg);
+        opacity: 1;
+    }
+
+    16% {
+        left: 10px;
+        opacity: 1;
+        transform: rotateY(60deg);
+    }
+
+    17% {
+        opacity : 0.1;
+        transform: rotateY(120deg);
+    }
+
+    41% {
+        left: 450px;
+        opacity: 0.1;
+        transform: rotateY(180deg);
+    }
+
+    65% {
+        opacity :0.1;
+        transform: rotateY(240deg)
+    }
+
+    66% {
+        left: 900px;
+        opacity: 1;
+        transform: rotateY(-60deg);
+    }
+
+    91% {
+        left: 450px;
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        left: 280px;
+        transform: rotateY(20deg);
+        opacity: 1;
+    }
+}
+.slotMachine .slot:nth-of-type(7n + 4) {
+    left: 450px;
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg); /* Safari and Chrome */
+    animation: column4 20s linear infinite;
+}
+
+@keyframes column4 {
+    0% {
+        left: 450px;
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    25% {
+        left: 10px;
+        opacity: 1;
+        transform: rotateY(60deg);
+    }
+    26% {
+        opacity:0.1;
+        transform: rotateY(120deg);
+    }
+    50% {
+        left: 450px;
+        opacity: 0.1;
+        transform: rotateY(180deg);
+    }
+    74% {
+        opacity:0.1;
+        transform: rotateY(240deg)
+    }
+    75% {
+        left: 900px;
+        opacity: 1;
+        transform: rotateY(-60deg);
+    }
+    100% {
+        left: 450px;
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+.slotMachine .slot:nth-of-type(7n + 5) {
+    left: 620px;
+    transform: rotateY(-20deg);
+    -webkit-transform: rotateY(-20deg); /* Safari and Chrome */
+    animation: column5 20s linear infinite;
+}
+
+@keyframes column5 {
+    0% {
+        left: 620px;
+        transform: rotateY(-20deg);
+        opacity: 1;
+    }
+    8% {
+        left: 450px;
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+
+    33% {
+        left: 10px;
+        opacity: 1;
+        transform: rotateY(60deg);
+    }
+
+    34% {
+        opacity:0.1;
+        transform: rotateY(120deg);
+    }
+
+    58% {
+        left: 450px;
+        opacity: 0.1;
+        transform: rotateY(180deg);
+    }
+
+    82% {
+        opacity:0.1;
+        transform: rotateY(240deg)
+    }
+
+    83% {
+        left: 900px;
+        opacity: 1;
+        transform: rotateY(-60deg);
+    }
+
+    100% {
+        left: 620px;
+        transform: rotateY(-20deg);
+        opacity: 1;
+    }
+}
+
+.slotMachine .slot:nth-of-type(7n + 6) {
+    left: 780px;
+    transform: rotateY(-40deg);
+    -webkit-transform: rotateY(-40deg); /* Safari and Chrome */
+    animation: column6 20s linear infinite;
+}
+
+@keyframes column6 {
+    0% {
+        left: 780px;
+        transform: rotateY(-40deg);
+        opacity: 1;
+    }
+
+    16% {
+        left: 450px;
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+
+    41% {
+        left: 10px;
+        opacity: 1;
+        transform: rotateY(60deg);
+    }
+
+    42% {
+        opacity:0.1;
+        transform: rotateY(120deg);
+    }
+
+    65% {
+        left: 450px;
+        opacity: 0.1;
+        transform: rotateY(180deg);
+    }
+
+    90% {
+        opacity:0.1;
+        transform: rotateY(240deg)
+    }
+
+    91% {
+        left: 900px;
+        opacity: 1;
+        transform: rotateY(-60deg);
+    }
+
+    100% {
+        left: 780px;
+        transform: rotateY(-40deg);
+        opacity: 1;
+    }
+}
+
+.slotMachine .slot:nth-of-type(7n ) {
+    left: 900px;
+    transform: rotateY(-60deg);
+    -webkit-transform: rotateY(-60deg); /* Safari and Chrome */
+    animation: column7 20s linear infinite;
+}
+@keyframes column7{
+    0% {
+        left: 900px;
+        transform: rotateY(-60deg);
+        opacity : 1;
+    }
+    25% {
+        left: 450px;
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+    50% {
+        left: 10px;
+        opacity: 1;
+        transform: rotateY(60deg);
+    }
+    51% {
+        opacity:0.1;
+        transform: rotateY(120deg);
+    }
+    75% {
+        left: 450px;
+        opacity: 0.1;
+        transform: rotateY(180deg);
+    }
+    99% {
+        opacity:0.1;
+        transform: rotateY(240deg);
+    }
+    100% {
+        left: 900px;
+        opacity: 1;
+        transform: rotateY(-60deg);
+    }
+}
+    /*设置行值*/
+.slotMachine .row0 {
+    top: 20px;   
+}
+    .slotMachine .row1 {
+        top: 190px;
+    }
+
+    .slotMachine .row2 {
+        top: 360px;
+    }
+
+    .slotMachine .row3 {
+        top: 530px;
+    }
+
+    .slotMachine .row4 {
+        top: 700px;
+    }
+
+
+
+    .slotMachine .slot > span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        line-height: 50px;
+        background-color: rgba(0,0,0,.5);
+        width: 100%;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 16px;
+        border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 6px;
+        background-color: rgba(255,255,255,.2);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: #fff;
+    }
+
+    .luck-img {
+        width: 100%;
+        padding-top: 100%;
+        background-position: center;
+        background-size: cover;
+    }

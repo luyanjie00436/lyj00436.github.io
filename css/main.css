@@ -1,0 +1,16 @@
+﻿/*音乐*/
+.div_music{ 
+    width : 100%;
+    padding: 20px;
+    right: 10px;
+    top: 10px;
+    color : white;
+}
+.div_music span{    
+    float: right;
+}
+
+.title{
+    font-size : 20px;
+    text-align:center;    
+}
